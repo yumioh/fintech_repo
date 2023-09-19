@@ -1,4 +1,4 @@
-import requests, json
+import requests, json, datetime
 from bs4 import BeautifulSoup
 
 #요청url을 get에 넣음
@@ -14,7 +14,7 @@ result = json.loads(data.text)
 #파일을 읽기 
 with open("data.json", "r") as json_file:
     test = json.load(json_file)
-print(test)
+#print(test)
 
 # for d in result:
 #     print(d['title'])
@@ -23,6 +23,17 @@ print(test)
 #json 형태로 응답이 오면 사용 가능
 result = data.json()
 #print(result)
+
+day = range(1,32)
+
+start = '2023-08-01'
+end = '2023-08-31'
+
+
+def date_range(date):
+    for val in range(1,32):
+        date = '202308' + '{0:02d}'.format(val)
+
 
 
 
